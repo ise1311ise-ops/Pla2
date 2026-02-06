@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Noor - Muslim Companion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+
+    <div class="background-glow"></div>
+
+    <div class="container">
+        <header>
+            <div class="user-greeting">
+                <span id="greeting">Ас-саляму алейкум</span>, 
+                <span id="username" class="username">друг</span>
+            </div>
+            <div class="location-badge">
+                <i class="fas fa-map-marker-alt"></i> <span id="city-name">Москва</span>
+            </div>
+        </header>
+
+        <div class="main-card glass">
+            <div class="next-prayer-label">Следующий намаз</div>
+            <div class="next-prayer-name" id="next-prayer">Загрузка...</div>
+            <div class="countdown" id="countdown">--:--:--</div>
+        </div>
+
+        <div class="prayers-grid">
+            <div class="prayer-item glass active">
+                <span>Фаджр</span> <span id="fajr-time">--:--</span>
+            </div>
+            <div class="prayer-item glass">
+                <span>Зухр</span> <span id="dhuhr-time">--:--</span>
+            </div>
+            <div class="prayer-item glass">
+                <span>Аср</span> <span id="asr-time">--:--</span>
+            </div>
+            <div class="prayer-item glass">
+                <span>Магриб</span> <span id="maghrib-time">--:--</span>
+            </div>
+            <div class="prayer-item glass">
+                <span>Иша</span> <span id="isha-time">--:--</span>
+            </div>
+        </div>
+
+        <div class="tasbih-section glass">
+            <h3><i class="fas fa-fingerprint"></i> Тасбих</h3>
+            <div class="tasbih-circle" id="tasbih-btn">
+                <span id="tasbih-count">0</span>
+            </div>
+            <p class="tasbih-hint">Нажми, чтобы считать</p>
+            <button class="reset-btn" id="reset-tasbih"><i class="fas fa-undo"></i> Сброс</button>
+        </div>
+
+        <button class="share-btn" id="share-btn">
+            Поделиться с братьями <i class="fas fa-share"></i>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
