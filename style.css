@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+
+:root {
+    --bg-color: #0f172a;
+    --primary: #10b981; /* Изумрудный */
+    --accent: #fbbf24;  /* Золотой */
+    --text: #ffffff;
+    --glass: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text);
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Фоновый градиент */
+.background-glow {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.15), transparent 60%);
+    z-index: -1;
+    animation: pulse 10s infinite alternate;
+}
+
+.container {
+    padding: 20px;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* Glassmorphism Effect */
+.glass {
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.user-greeting {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.username {
+    color: var(--primary);
+}
+
+.location-badge {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+/* Main Card */
+.main-card {
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+.next-prayer-label {
+    font-size: 0.9rem;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.next-prayer-name {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 10px 0;
+    background: linear-gradient(to right, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.countdown {
+    font-size: 1.2rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* Grid */
+.prayers-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.prayer-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-radius: 15px;
+    transition: transform 0.2s;
+}
+
+.prayer-item:active {
+    transform: scale(0.98);
+}
+
+/* Tasbih Section */
+.tasbih-section {
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 80px; /* Space for bottom safe area */
+}
+
+.tasbih-circle {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, var(--primary), #059669);
+    border-radius: 50%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.tasbih-circle:active {
+    transform: scale(0.90);
+}
+
+.reset-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #aaa;
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+/* Share Button */
+.share-btn {
+    width: 100%;
+    padding: 18px;
+    background: var(--text);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 18px;
+    font-weight: 800;
+    font-size: 1rem;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 440px;
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+    z-index: 10;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.1); }
+}
